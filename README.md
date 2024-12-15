@@ -39,8 +39,6 @@ The tests cover various scenarios such as user login, product filtering, shoppin
 |
 |-- features/pages
 |   |-- homepage.py
-|   |-- login_page.py
-|   |-- cart_page.py
 |
 |-- main.py
 |-- README.md
