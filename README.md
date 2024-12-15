@@ -20,35 +20,6 @@ The tests cover various scenarios such as user login, product filtering, shoppin
 5. **Social Media Links**
    - Verifying correct navigation to social media pages.
 
-## Project Structure
-```
-|-- features
-|   |-- login.feature
-|   |-- cart.feature
-|   |-- shopping.feature
-|   |-- filter.feature
-|   |-- socials.feature
-|   |-- environment.py
-|
-|-- features/steps
-|   |-- login.py
-|   |-- cart.py
-|   |-- shopping.py
-|   |-- filter.py
-|   |-- socials.py
-|
-|-- features/pages
-|   |-- homepage.py
-|
-|-- main.py
-|-- README.md
-```
-
-### Description of Files
-- **`features`**: Contains all the feature files describing the test scenarios in Gherkin syntax.
-- **`steps`**: Contains step definitions for each feature file.
-- **`pages`**: Contains Page Object Model (POM) implementations for the tested web pages.
-
 ## Prerequisites
 Ensure the following are installed:
 - Python (>= 3.10)
@@ -72,21 +43,6 @@ Ensure the following are installed:
    ```bash
    behave features/login.feature
    ```
-
-## Test Execution Summary
-- **Login**:
-  - Verifies valid and invalid login attempts.
-  - Ensures users can log out successfully.
-- **Shopping Cart**:
-  - Tests adding and removing products.
-  - Validates cart contents dynamically.
-- **Shopping**:
-  - Tests purchasing different combinations of products.
-  - Verifies price calculations.
-- **Product Filtering**:
-  - Confirms product sorting functionality.
-- **Social Media Links**:
-  - Ensures correct navigation to SauceDemo's social media pages.
 
 ## Notes
 - Test data is pre-defined in the feature files.
