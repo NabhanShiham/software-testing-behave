@@ -3,7 +3,7 @@ Feature: Saucedemo User Login
   Background:
     Given the home page is opened
 
-    Scenario Outline: Correct Login Attempts
+    Scenario Outline: Correct Login attempts
       Given the 'Username' field is filled with '<username>'
       And the 'Password' field is filled with '<password>'
       And the 'Login' button is clicked
