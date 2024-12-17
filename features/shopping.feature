@@ -54,4 +54,21 @@ Feature: Saucedemo Shopping for products
     And the 'Finish' button is clicked
     And the 'Back Home' button is clicked
 
+  Scenario Outline: Buying an item but not including information at checkout
+    Given the 'Sauce Labs Onesie' is added to the cart
+    And the 'Cart' button is clicked
+    And the 'Checkout' button is clicked
+    And the checkout information is missing the '<field>'
+    When the 'Continue' button is clicked
+    Then the '<checkoutError>' is shown
+    And the 'Cancel' button is clicked
+    And the 'Cart' button is clicked
+    And the 'Sauce Labs Onesie' is removed from the cart
+    And the 'Continue Shopping' button is clicked
+    Examples:
+      |field|checkoutError|
+      |First Name     | Error: First Name is required|
+      |Last Name      | Error: Last Name is required|
+      |Zip Code      | Error: Postal Code is required|
+
 

@@ -25,14 +25,17 @@ class Homepage:
         "Continue Shopping": (By.ID, "continue-shopping"),
         "Finish": (By.ID, "finish"),
         "Back Home": (By.ID, "back-to-products"),
-        "Filter": (By.CLASS_NAME, "product_sort_container")
+        "Filter": (By.CLASS_NAME, "product_sort_container"),
+        "Cancel": (By.ID, "cancel")
     }
 
     messages = {
         "login error": (
             By.CSS_SELECTOR, "#login_button_container > div > form > div.error-message-container.error > h3"),
         "price label": (By.CSS_SELECTOR, "#checkout_summary_container > div > div.summary_info > "
-                                         "div.summary_total_label")
+                                         "div.summary_total_label"),
+        "checkout error": (By.CSS_SELECTOR, "#checkout_info_container > div > form > div > "
+                                            "div.error-message-container.error > h3")
     }
 
     item_buttons = {
@@ -76,6 +79,9 @@ class Homepage:
 
     def get_error_message(self):
         return self.driver.find_element(*self.messages["login error"]).text
+
+    def get_checkout_error(self):
+        return self.driver.find_element(*self.messages["checkout error"]).text
 
     def add_to_cart(self, item):
         self.driver.find_element(*self.item_buttons[item]).click()
